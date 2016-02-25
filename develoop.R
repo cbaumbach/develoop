@@ -13,10 +13,6 @@ pr <- function(...) {
     cat(..., "\n", sep = "")
 }
 
-exit <- function(status) {
-    quit(save = "no", status = status)
-}
-
 invisible(lapply(required_packages, check_for_package))
 
 prompt <- "? "
