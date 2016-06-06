@@ -21,6 +21,7 @@ development_loop <- function() {
     require(stats, quietly = TRUE)
     while (TRUE) {
         try(switch(command <- readline(prompt),
+            b = devtools::build(),
             c = devtools::clean_dll(),
             ch = devtools::check(),
             d = devtools::document(),
@@ -34,6 +35,7 @@ development_loop <- function() {
 }
 
 show_available_commands <- function() {
+    pr("b  build")
     pr("c  clean_dll")
     pr("ch check")
     pr("d  document")
