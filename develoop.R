@@ -22,22 +22,26 @@ development_loop <- function() {
     while (TRUE) {
         try(switch(command <- readline(prompt),
             c = devtools::clean_dll(),
+            ch = devtools::check(),
             d = devtools::document(),
             h = show_available_commands(),
+            i = devtools::install(),
             l = devtools::load_all(),
-            t = devtools::test(),
             q = return(),
+            t = devtools::test(),
             pr("unknown command: ", command)))
     }
 }
 
 show_available_commands <- function() {
     pr("c  clean_dll")
+    pr("ch check")
     pr("d  document")
-    pr("l  load_all")
-    pr("t  test")
     pr("h  help")
+    pr("i  install")
+    pr("l  load_all")
     pr("q  quit")
+    pr("t  test")
 }
 
 development_loop()
