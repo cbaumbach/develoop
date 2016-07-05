@@ -19,7 +19,7 @@ prompt <- "? "
 
 development_loop <- function() {
     require(stats, quietly = TRUE)
-    while (TRUE) {
+    repeat {
         try(switch(command <- readline(prompt),
             b = devtools::build(),
             c = devtools::clean_dll(),
